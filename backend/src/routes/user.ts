@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { register } from "../controllers/authentication";
+import { login, register } from "../controllers/authentication";
 const userRouter = Router();
 
 //Signup
@@ -8,9 +8,7 @@ userRouter.post("/signup", register);
 
 //Signin
 //- email, password
-userRouter.post("/signin", (req, res) => {
-  res.send("Signin route");
-})
+userRouter.post("/signin", login);
 
 userRouter.post("/logout", (req, res) => {
   res.send("logout route");
