@@ -1,18 +1,18 @@
-import { defaultMaxListeners } from "events";
 import { Router } from "express";
+import { register } from "../controllers/authentication";
 const userRouter = Router();
 
 //Signup
 //- name, email, password
-userRouter.get("/signup", (req, res) => {
-  res.send("Signup route");
-})
+userRouter.post("/signup", register);
 
-userRouter.get("/signin", (req, res) => {
+//Signin
+//- email, password
+userRouter.post("/signin", (req, res) => {
   res.send("Signin route");
 })
 
-userRouter.get("/logout", (req, res) => {
+userRouter.post("/logout", (req, res) => {
   res.send("logout route");
 })
 
@@ -20,4 +20,5 @@ export default userRouter;
 
 
 
-
+//4pzQmkovzFjBAl8s mongodb password
+//maneprajyot756 username
